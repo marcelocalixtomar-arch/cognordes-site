@@ -398,8 +398,9 @@
             <span class="pay-pill">STRIPE</span>
             <span class="pay-pill">GLOBAL</span>
           </div>
-          <a href="#" class="action-btn" id="btn-p1" target="_blank">Adquirir Livro</a>
-        </div>
+         <a href="https://buy.stripe.com/test_5kQfZaaj6c5k" class="action-btn" id="btn-p1" target="_blank">Adquirir Livro</a>
+
+       </div>
       </div>
 
       <!-- PRODUTO 2: VÍDEOS GRAVADOS (FASE 2) -->
@@ -455,87 +456,46 @@
   </div> <!-- FIM DO APP-CONTAINER -->
 
   <!-- MOTOR DE TRADUÇÃO JAVASCRIPT GLOBAL -->
-  <script>
-    // Dicionário global estruturado exatamente com os campos que você configurou
-    const dictionary = {
-        pt: {
-            mainTitle: 'SISTEMA AVANÇADO DE<br><span style="color: #00FFcc;">CONHECIMENTO GLOBAL</span>',
-            strategy: 'Apresentação e Visão Estratégica',
-            badge: 'FASE 1: ACERVO LITERÁRIO DIGITAL',
-            subtitle: 'ACESSO AOS MANUAIS OPERACIONAIS',
-            desc: 'Adquira nossos livros digitais e receba o link de download direto do servidor criptografado imediatamente após a confirmação.',
-            callaction: '[ SELECIONE O SEU MÓDULO ABAIXO ]',
-            distribution: 'MÓDULOS DE DISTRIBUIÇÃO DE CONHECIMENTO',
-            tagP1: 'FASE 1 - LIVRO DIGITAL',
-            titleP1: 'Volume 1: Fundamentos',
-            descP1: 'O ponto de partida para estruturar sua mente em arquiteturas monetárias.',
-            currencyP1: 'R$',
-            amountP1: '5,00',
-            stripeUrlP1: 'SEU_LINK_STRIPE_BRASIL_AQUI'
-        },
-        en: {
-            mainTitle: 'ADVANCED SYSTEM OF<br><span style="color: #00FFcc;">GLOBAL KNOWLEDGE</span>',
-            strategy: 'Presentation and Strategic Vision',
-            badge: 'PHASE 1: DIGITAL LITERARY COLLECTION',
-            subtitle: 'ACCESS TO OPERATIONAL MANUALS',
-            desc: 'Purchase our digital books and receive the download link directly from the encrypted server immediately after confirmation.',
-            callaction: '[ SELECT YOUR MODULE BELOW ]',
-            distribution: 'KNOWLEDGE DISTRIBUTION MODULES',
-            tagP1: 'PHASE 1 - DIGITAL BOOK',
-            titleP1: 'Volume 1: Fundamentals',
-            descP1: 'The starting point for structuring your mind in monetary architectures.',
-            currencyP1: '$',
-            amountP1: '2.00',
-            stripeUrlP1: 'SEU_LINK_STRIPE_EUA_AQUI'
-        },
-        zh: {
-            mainTitle: '全球知识<br><span style="color: #00FFcc;">高级系统</span>',
-            strategy: '演示与战略愿景',
-            badge: '第一阶段：数字文学收藏',
-            subtitle: '获取操作手册',
-            desc: '购买我们的电子书，确认后立即从加密服务器获取直接下载链接。',
-            callaction: '[ 请在下方选择您的模块 ]',
-            distribution: '知识分发模块',
-            tagP1: '第一阶段 - 电子书',
-            titleP1: '第 1 卷：基础知识',
-            descP1: '构建您在货币架构中思想的起点。',
-            currencyP1: '¥',
-            amountP1: '16.00',
-            stripeUrlP1: 'SEU_LINK_STRIPE_CHINA_AQUI'
-        }
-    };
-
-    function switchLanguage(lang) {
-        console.log("Idioma alterado para: " + lang);
-
-        if (!dictionary[lang]) return;
-
-        // Atualização dos textos estáticos principais
-        const txtMainTitle = document.getElementById('txt-main-title');
-        const titleStrategy = document.getElementById('title-strategy');
-        const txtBadge = document.getElementById('txt-badge');
-        const txtSubtitle = document.getElementById('txt-subtitle');
-        const txtDesc = document.getElementById('txt-desc');
-        const txtCallAction = document.getElementById('txt-callaction');
-        const titleDistribution = document.getElementById('title-distribution');
-
-        if (txtMainTitle) txtMainTitle.innerHTML = dictionary[lang].mainTitle;
-        if (titleStrategy) titleStrategy.innerText = dictionary[lang].strategy;
-        if (txtBadge) txtBadge.innerText = dictionary[lang].badge;
-        if (txtSubtitle) txtSubtitle.innerText = dictionary[lang].subtitle;
-        if (txtDesc) txtDesc.innerText = dictionary[lang].desc;
-        if (txtCallAction) txtCallAction.innerText = dictionary[lang].callaction;
-        if (titleDistribution) titleDistribution.innerText = dictionary[lang].distribution;
-
-        // Atualização dinâmica dos preços e botões (Volume 1)
-        const currencyP1 = document.getElementById('currency-p1');
-        const amountP1 = document.getElementById('amount-p1');
-        const btnP1 = document.getElementById('btn-stripe-p1');
-
-        if (currencyP1) currencyP1.innerText = dictionary[lang].currencyP1;
-        if (amountP1) amountP1.innerText = dictionary[lang].amountP1;
-        if (btnP1) btnP1.href = dictionary[lang].stripeUrlP1;
+</body><!-- ==========================================================================
+     SISTEMA DE TRADUÇÃO GLOBAL INTEGRAÇÃO STRIPE
+     ========================================================================== -->
+<script>
+const dictionary = {
+    pt: {
+        currencyP1: "R$",
+        amountP1: "5,00",
+        stripeUrlP1: "https://stripe.com" // Substitua pelo seu link real do Stripe em Reais
+    },
+    en: {
+        currencyP1: "$",
+        amountP1: "1.00",
+        stripeUrlP1: "https://stripe.com" // Substitua pelo seu link real do Stripe em Dólar
+    },
+    es: {
+        currencyP1: "€",
+        amountP1: "1,00",
+        stripeUrlP1: "https://stripe.com" // Substitua pelo seu link real do Stripe em Euro
+    },
+    zh: {
+        currencyP1: "¥",
+        amountP1: "7.00",
+        stripeUrlP1: "https://stripe.com" // Substitua pelo seu link real do Stripe em Yuan
     }
-  </script>
+};
+function switchLanguage(lang) {
+    const langClean = lang.toLowerCase().trim();
+    document.documentElement.lang = langClean === 'pt' ? 'pt-BR' : langClean;
+
+    const currentLang = dictionary[langClean] || dictionary['en'];
+
+    const currencyP1 = document.getElementById('currency-p1');
+    const amountP1 = document.getElementById('amount-p1');
+    const btnP1 = document.getElementById('btn-p1');
+
+    if (currencyP1) currencyP1.innerText = currentLang.currencyP1;
+    if (amountP1) amountP1.innerText = currentLang.amountP1;
+    if (btnP1) btnP1.href = currentLang.stripeUrlP1;
+}
+</script>
 </body>
 </html>
