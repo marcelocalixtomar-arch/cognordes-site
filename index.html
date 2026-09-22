@@ -341,12 +341,13 @@
     <div class="system-status">SYS_STATUS: ACTIVE</div>
     <div>
       <select class="lang-selector" id="langSelect" onchange="switchLanguage(this.value)">
-        <option value="pt">PT-BR</option>
-        <option value="en">EN-US</option>
-        <option value="es">ES-EU</option>
-        <option value="zh">ZH-CN</option>
-      </select>
-    </div>
+           <option value="pt">🌐 PT-BR</option>
+          <option value="en">🌐 EN-US (Global)</option>
+          <option value="es">🌐 ES-ES (España)</option>
+          <option value="zh">🌐 ZH-CN (China)</option>
+        </select>
+      </div>
+   </div>
   </div>
 
   <!-- CONTAINER DO CONTEÚDO PRINCIPAL COM O LIVRO NO PORTAL -->
@@ -455,71 +456,86 @@
 
   <!-- MOTOR DE TRADUÇÃO JAVASCRIPT GLOBAL -->
   <script>
-     pt: {
-        mainTitle: "SISTEMA AVANÇADO DE<br><span>CONHECIMENTO GLOBAL</span>",
-        strategy: "Apresentação e Visão Estratégica",
-        badge: "<img src='livro-3d.png' style='width: 100%; max-width: 160px; display: block; margin: 0 auto 10px auto; filter: drop-shadow(0 0 12px #00ffff);'><br>FASE 1: ACERVO LITERÁRIO DIGITAL",
-        subtitle: "Acesso aos Manuais Operacionais",        desc: "Adquira nossos livros digitais e receba o link de download direto",
- 
-        callaction: "[ SELECIONE O SEU MÓDULO ABAIXO ]",
-        distribution: "Módulos de Distribuição de Conhecimento",
-        tagP1: "Fase 1 - Livro Digital", titleP1: "Volume 1: Fundamentos", descP1: "O ponto de partida ideal para estruturar seus conhecimentos em arquiteturas cibernéticas.", subP1: "Download via MEGA", btnP1: "Adquirir Livro",
-        currencyP1: "R$", amountP1: "5,00", currencyP2: "R$",
-        stripeUrlP1: "https://stripe.com",
-        tagP2: "Fase 2 - Gravações", titleP2: "Treinamento em Vídeo", descP2: "Aulas práticas passo a passo detalhando os scripts diretamente no terminal do VS Code.", subP2: "Lançamento em Breve",
-        tagP3: "Fase 3 - Ao Vivo", titleP3: "Mentoria & Consultoria", descP3: "Transmissões de suporte estratégico individualizado focado na sua infraestrutura.", subP3: "Aguardando Validação"
-      },
-      en: {
-        mainTitle: "ADVANCED SYSTEM OF<br><span>GLOBAL KNOWLEDGE</span>",
-        strategy: "Presentation and Strategic Vision",
-        badge: "PHASE 1: DIGITAL LITERARY ARCHIVE",
-        subtitle: "Access to Operational Manuals",
-        desc: "Acquire our digital books and receive the download link directly from the cloud encrypted server immediately after confirmation.",
-        callaction: "[ SELECT YOUR MODULE BELOW ]",
-        distribution: "Knowledge Distribution Modules",
-        tagP1: "Phase 1 - Digital Book", titleP1: "Volume 1: Fundamentals", descP1: "The perfect starting point to structure your knowledge in cyber architectures.", subP1: "Download via MEGA", btnP1: "Get eBook",
-        currencyP1: "$", amountP1: "2.00", currencyP2: "$",
-        stripeUrlP1: "https://stripe.com",
-        tagP2: "Phase 2 - Recordings", titleP2: "Video Training", descP2: "Step-by-step practical classes detailing scripts directly in the VS Code terminal.", subP2: "Coming Soon",
-        tagP3: "Phase 3 - Live", titleP3: "Mentorship & Consulting", descP3: "Live streams of individual strategic support focused on your infrastructure.", subP3: "Awaiting Validation"
-      },
-      es: {
-        mainTitle: "SISTEMA AVANZADO DE<br><span>CONOCIMIENTO GLOBAL</span>",
-        strategy: "Presentación y Visión Estratégica",
-        badge: "FASE 1: ACERVO LITERARIO DIGITAL",
-        subtitle: "Acceso a los Manuales Operativos",
-        desc: "Adquiera nuestros libros digitales y reciba el enlace de descarga directamente desde el servidor cifrado en la nube inmediatamente después de la confirmación.",
-        callaction: "[ SELECCIONE SU MÓDULO ABAJO ]",
-        distribution: "Módulos de Distribución de Conocimiento",
-        tagP1: "Fase 1 - Libro Digital", titleP1: "Volumen 1: Fundamentos", descP1: "El punto de partida ideal para estruturar sus conocimientos en arquitecturas cibernéticas.", subP1: "Descarga vía MEGA", btnP1: "Adquirir Libro",
-        currencyP1: "€", amountP1: "2,00", currencyP2: "€",
-        stripeUrlP1: "https://stripe.com",
-        tagP2: "Fase 2 - Grabaciones", titleP2: "Entrenamiento en Video", descP2: "Clases prácticas paso a paso detallando los scripts directamente en la terminal de VS Code.", subP2: "Próximamente",
-        tagP3: "Fase 3 - En Vivo", titleP3: "Mentoría y Consultoría", descP3: "Transmisiones de soporte estratégico individualizado enfocado en su infraestructura.", subP3: "Esperando Validación"
-      },
-      zh: {
-        mainTitle: "高级全球<br><span>知识系统</span>",
-        strategy: "简报与战略愿景",
-        badge: "第一阶段：数字文献馆藏",
-        subtitle: "获取操作手册",
-        desc: "购买我们的电子书，确认后立即从云端加密服务器获取直接下载链接。",
-        callaction: "[ 请在下方选择您的模块 ]",
-        distribution: "知识分发模块",
-        tagP1: "第一阶段 - 电子书", titleP1: "第 1 卷：基础知识", descP1: "构建您在网络架构方面知识的理想起点。", subP1: "通过 MEGA 下载", btnP1: "购买书籍",
-        currencyP1: "¥", amountP1: "16.00", currencyP2: "¥",
-        stripeUrlP1: "https://stripe.com",
-        tagP2: "第二阶段 - 录播课", titleP2: "视频培训课程", descP2: "分步实操课，直接在 VS Code 终端中详细讲解脚本。", subP2: "即将推出",
-        tagP3: "第三阶段 - 在线直播", titleP3: "导师陪跑 & 咨询", descP3: "针对您的基础设施提供定制化的个人战略支持直播。", subP3: "等待验证"
-      }
+    // Dicionário global estruturado exatamente com os campos que você configurou
+    const dictionary = {
+        pt: {
+            mainTitle: 'SISTEMA AVANÇADO DE<br><span style="color: #00FFcc;">CONHECIMENTO GLOBAL</span>',
+            strategy: 'Apresentação e Visão Estratégica',
+            badge: 'FASE 1: ACERVO LITERÁRIO DIGITAL',
+            subtitle: 'ACESSO AOS MANUAIS OPERACIONAIS',
+            desc: 'Adquira nossos livros digitais e receba o link de download direto do servidor criptografado imediatamente após a confirmação.',
+            callaction: '[ SELECIONE O SEU MÓDULO ABAIXO ]',
+            distribution: 'MÓDULOS DE DISTRIBUIÇÃO DE CONHECIMENTO',
+            tagP1: 'FASE 1 - LIVRO DIGITAL',
+            titleP1: 'Volume 1: Fundamentos',
+            descP1: 'O ponto de partida para estruturar sua mente em arquiteturas monetárias.',
+            currencyP1: 'R$',
+            amountP1: '5,00',
+            stripeUrlP1: 'SEU_LINK_STRIPE_BRASIL_AQUI'
+        },
+        en: {
+            mainTitle: 'ADVANCED SYSTEM OF<br><span style="color: #00FFcc;">GLOBAL KNOWLEDGE</span>',
+            strategy: 'Presentation and Strategic Vision',
+            badge: 'PHASE 1: DIGITAL LITERARY COLLECTION',
+            subtitle: 'ACCESS TO OPERATIONAL MANUALS',
+            desc: 'Purchase our digital books and receive the download link directly from the encrypted server immediately after confirmation.',
+            callaction: '[ SELECT YOUR MODULE BELOW ]',
+            distribution: 'KNOWLEDGE DISTRIBUTION MODULES',
+            tagP1: 'PHASE 1 - DIGITAL BOOK',
+            titleP1: 'Volume 1: Fundamentals',
+            descP1: 'The starting point for structuring your mind in monetary architectures.',
+            currencyP1: '$',
+            amountP1: '2.00',
+            stripeUrlP1: 'SEU_LINK_STRIPE_EUA_AQUI'
+        },
+        zh: {
+            mainTitle: '全球知识<br><span style="color: #00FFcc;">高级系统</span>',
+            strategy: '演示与战略愿景',
+            badge: '第一阶段：数字文学收藏',
+            subtitle: '获取操作手册',
+            desc: '购买我们的电子书，确认后立即从加密服务器获取直接下载链接。',
+            callaction: '[ 请在下方选择您的模块 ]',
+            distribution: '知识分发模块',
+            tagP1: '第一阶段 - 电子书',
+            titleP1: '第 1 卷：基础知识',
+            descP1: '构建您在货币架构中思想的起点。',
+            currencyP1: '¥',
+            amountP1: '16.00',
+            stripeUrlP1: 'SEU_LINK_STRIPE_CHINA_AQUI'
+        }
     };
 
     function switchLanguage(lang) {
-      document.getElementById('txt-main-title').innerHTML = dictionary[lang].mainTitle;
-      document.getElementById('title-strategy').innerText = dictionary[lang].strategy;
-      document.getElementById('txt-badge').innerText = dictionary[lang].badge;
-      document.getElementById('txt-subtitle').innerText = dictionary[lang].subtitle;
-      document.getElementById('txt-desc').innerText = dictionary[lang].desc;
-      document.getElementById('txt-callaction').innerText = dictionary[lang].callaction;
-      document.getElementById('title-distribution').innerText = dictionary[lang].distribution;
-      
-      document.getElementById('currency-p1').innerText = dictionary[lang].currencyP1;
+        console.log("Idioma alterado para: " + lang);
+
+        if (!dictionary[lang]) return;
+
+        // Atualização dos textos estáticos principais
+        const txtMainTitle = document.getElementById('txt-main-title');
+        const titleStrategy = document.getElementById('title-strategy');
+        const txtBadge = document.getElementById('txt-badge');
+        const txtSubtitle = document.getElementById('txt-subtitle');
+        const txtDesc = document.getElementById('txt-desc');
+        const txtCallAction = document.getElementById('txt-callaction');
+        const titleDistribution = document.getElementById('title-distribution');
+
+        if (txtMainTitle) txtMainTitle.innerHTML = dictionary[lang].mainTitle;
+        if (titleStrategy) titleStrategy.innerText = dictionary[lang].strategy;
+        if (txtBadge) txtBadge.innerText = dictionary[lang].badge;
+        if (txtSubtitle) txtSubtitle.innerText = dictionary[lang].subtitle;
+        if (txtDesc) txtDesc.innerText = dictionary[lang].desc;
+        if (txtCallAction) txtCallAction.innerText = dictionary[lang].callaction;
+        if (titleDistribution) titleDistribution.innerText = dictionary[lang].distribution;
+
+        // Atualização dinâmica dos preços e botões (Volume 1)
+        const currencyP1 = document.getElementById('currency-p1');
+        const amountP1 = document.getElementById('amount-p1');
+        const btnP1 = document.getElementById('btn-stripe-p1');
+
+        if (currencyP1) currencyP1.innerText = dictionary[lang].currencyP1;
+        if (amountP1) amountP1.innerText = dictionary[lang].amountP1;
+        if (btnP1) btnP1.href = dictionary[lang].stripeUrlP1;
+    }
+  </script>
+</body>
+</html>
