@@ -334,7 +334,7 @@
     .dot.g { background: #22c55e; }
   </style>
 </head>
-<body>
+<<body>
 
   <!-- BARRA HUD SUPERIOR COM SELETOR DE IDIOMAS GLOBAL -->
   <div class="global-top-bar">
@@ -349,17 +349,18 @@
     </div>
   </div>
 
-  <!-- CONTAINER DO CONTEÚDO PRINCIPAL -->
-  <div class="app-container">
+  <!-- CONTAINER DO CONTEÚDO PRINCIPAL COM O LIVRO NO PORTAL -->
+  <div class="app-container" style="text-align: center; margin-bottom: 40px;">
     
-    <!-- BRAND LOGO ANIMADO -->
-    <div class="brand-section">
-      <div class="portal-core">
-        <div class="ring-ext"></div>
-        <div class="ring-int"></div>
-      </div>
-      <h1 class="headline-main" id="txt-main-title">SISTEMA AVANÇADO DE<br><span>CONHECIMENTO GLOBAL</span></h1>
+    <div class="portal-core" style="position: relative; width: 300px; height: 300px; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+      <div class="ring-ext"></div>
+      <div class="ring-int"></div>
+      <!-- O livro agora fixado no centro exato dos anéis neon -->
+      <img src="livro-3d.png" alt="E-book A Nova Moeda" style="width: 180px; position: absolute; z-index: 10; filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.6));">
     </div>
+
+    <h1 class="headline-main" id="txt-main-title" style="margin-top: 20px;">SISTEMA AVANÇADO DE<br><span style="color: #00FFcc;">CONHECIMENTO GLOBAL</span></h1>
+  </div>
 
     <!-- SEÇÃO VISUAL FIXADA -->
     <div class="section-title" id="title-strategy">Apresentação e Visão Estratégica</div>
@@ -454,13 +455,12 @@
 
   <!-- MOTOR DE TRADUÇÃO JAVASCRIPT GLOBAL -->
   <script>
-    const dictionary = {
-      pt: {
+     pt: {
         mainTitle: "SISTEMA AVANÇADO DE<br><span>CONHECIMENTO GLOBAL</span>",
         strategy: "Apresentação e Visão Estratégica",
-        badge: "FASE 1: ACERVO LITERÁRIO DIGITAL",
-        subtitle: "Acesso aos Manuais Operacionais",
-        desc: "Adquira nossos livros digitais e receba o link de download direto do servidor criptografado via nuvem imediatamente após a confirmação.",
+        badge: "<img src='livro-3d.png' style='width: 100%; max-width: 160px; display: block; margin: 0 auto 10px auto; filter: drop-shadow(0 0 12px #00ffff);'><br>FASE 1: ACERVO LITERÁRIO DIGITAL",
+        subtitle: "Acesso aos Manuais Operacionais",        desc: "Adquira nossos livros digitais e receba o link de download direto",
+ 
         callaction: "[ SELECIONE O SEU MÓDULO ABAIXO ]",
         distribution: "Módulos de Distribuição de Conhecimento",
         tagP1: "Fase 1 - Livro Digital", titleP1: "Volume 1: Fundamentos", descP1: "O ponto de partida ideal para estruturar seus conhecimentos em arquiteturas cibernéticas.", subP1: "Download via MEGA", btnP1: "Adquirir Livro",
