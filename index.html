@@ -71,6 +71,12 @@ body{background:#05080f;color:#e6f1ff;font-family:Inter,Arial,sans-serif;overflo
 .price-box h2{color:#00e5ff;font-size:28px}
 img{max-width:100%;height:auto}
 .construction-notice{background:rgba(255,204,0,0.1);border:1px solid #ffcc00;border-radius:8px;padding:12px;margin:20px 0;text-align:center;color:#ffcc00;font-size:11px}
+
+/* MARQUEE FOOTER - nome circulando */
+.marquee{width:100%;overflow:hidden;background:#08121d;border-top:1px solid #12202f;border-bottom:1px solid #12202f;padding:10px 0;white-space:nowrap;position:relative;z-index:5}
+.marquee-track{display:inline-block;animation:marqueeScroll 25s linear infinite;font-size:10px;letter-spacing:3px;color:#00e5ff;font-weight:900}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
 </style>
 </head>
 <body>
@@ -120,7 +126,6 @@ img{max-width:100%;height:auto}
 <img src="capa-07.07.45.jpg" style="width:50px;border-radius:4px;border:1px solid #1a3a5a;cursor:pointer" onclick="trocaCapa(1)">
 </div>
 </div>
-</div>
 
 <div class="fases">
 <h2 id="fasesTitle">4 FASES PARA<br>DOMINAR O<br>MUNDO</h2>
@@ -138,6 +143,10 @@ img{max-width:100%;height:auto}
 <p style="font-size:11px;color:#6a7a8a;margin-top:14px;line-height:1.6" id="secDesc">O sistema foi desenhado para te manter fora. Data é o novo petróleo. Quem controla os dados, controla o mundo. Cognordes é o protocolo para escapar. Site em fase de construção - garanta seu acesso por $1.</p>
 </div>
 <div class="checkout-box">
+<div style="display:flex;gap:16px;align-items:center;margin-bottom:14px">
+<img src="capa-07.07.45.jpg" style="width:80px;border-radius:8px;border:1px solid #00e5ff;box-shadow:0 0 20px rgba(0,229,255,0.4)" alt="Livro">
+<div style="font-size:10px;color:#5a6a85;line-height:1.4">📚 LIVRO 02<br><b style="color:#00e5ff;font-size:11px">DATACOIN INSIDE</b><br>PDF + EPUB<br>Entrega imediata</div>
+</div>
 <p style="font-size:10px;color:#5a6a7a;margin-bottom:12px;position:relative" id="checkoutLabel">🚧 CHECKOUT EM CONSTRUÇÃO • STRIPE ATIVO</p>
 <div style="background:#08121d;border:1px solid #1a3a4a;border-radius:6px;padding:12px;font-size:10px;color:#8aa;position:relative" id="checkoutInfo">Pagamento em US$ 1,00 via Stripe - Cartão, Apple Pay, Google Pay - Acesso antecipado fase construção</div>
 <a href="https://buy.stripe.com/14A6oAgLGcRkFXJ4Sy0oMm00" class="btn" style="display:block;text-align:center;margin-top:16px;position:relative" id="btnCheckout">$1 DÓLAR PARA O MUNDO →</a>
@@ -149,6 +158,14 @@ img{max-width:100%;height:auto}
 <h2 id="priceTitle">$1 DÓLAR PARA O MUNDO</h2>
 <p style="margin-top:8px;font-size:12px;color:#8aa" id="priceDesc">Preço especial de construção: $1 USD Worldwide | Idiomas: PT EN ES ZH | Formato: Digital PDF EPUB | Acesso vitalício antecipado</p>
 <a href="https://buy.stripe.com/14A6oAgLGcRkFXJ4Sy0oMm00" style="display:inline-block;margin-top:16px;background:#00e5ff;color:#000;padding:14px 28px;border-radius:8px;text-decoration:none;font-weight:900" id="finalBtn">QUERO MEU ACESSO POR $1 →</a>
+
+<div class="marquee" id="footerMarquee">
+<div class="marquee-track">
+COGNORDES • SECURITY • 2026 • EM CONSTRUÇÃO • $1 DÓLAR PARA O MUNDO • WORLDWIDE • DATACOIN • JAVASCRIPT • COGNORDES • SECURITY • 2026 • EM CONSTRUÇÃO • $1 DÓLAR PARA O MUNDO • WORLDWIDE • DATACOIN • JAVASCRIPT • COGNORDES • SECURITY • 2026 • EM CONSTRUÇÃO • $1 DÓLAR PARA O MUNDO • WORLDWIDE • DATACOIN • JAVASCRIPT •
+</div>
+</div>
+
+<div style="height:20px"></div>
 <p style="margin-top:12px;font-size:9px;color:#ffcc00" id="constructionFooter">🚧 Site em fase de construção - Preço promocional $1 dólar para o mundo - Garanta já! 🚧</p>
 </div>
 </div>
@@ -314,6 +331,23 @@ card.addEventListener('click',()=>{
   setTimeout(()=>shine.style.left='150%',50);
 });
 function trocaCapa(i){coverImg.src=capas[i];card.classList.remove('flipped','flipped2');lado=0;}
+
+
+// Update marquee with lang
+const marqueeTexts={
+ pt:"COGNORDES • SECURITY • 2026 • EM CONSTRUÇÃO • $1 DÓLAR PARA O MUNDO • WORLDWIDE • DATACOIN • JAVASCRIPT • ",
+ en:"COGNORDES • SECURITY • 2026 • UNDER CONSTRUCTION • $1 DOLLAR WORLDWIDE • PARA O MUNDO • DATACOIN • JAVASCRIPT • ",
+ es:"COGNORDES • SECURITY • 2026 • EN CONSTRUCCIÓN • $1 DÓLAR PARA EL MUNDO • WORLDWIDE • DATACOIN • JAVASCRIPT • ",
+ zh:"COGNORDES • SECURITY • 2026 • 建设中 • $1 美元全球 • PARA O MUNDO • DATACOIN • JAVASCRIPT • "
+};
+const originalSetLang = setLang;
+setLang = function(lang){
+ originalSetLang(lang);
+ const track=document.querySelector('.marquee-track');
+ if(track && marqueeTexts[lang]){
+   track.textContent = (marqueeTexts[lang]+marqueeTexts[lang]+marqueeTexts[lang]);
+ }
+};
 
 // Load saved lang
 const saved=localStorage.getItem('cognordes-lang');
