@@ -16,7 +16,7 @@ body{background:#05080f;color:#e6f1ff;font-family:Inter,Arial,sans-serif;overflo
 
 /* PARTICLES EFFECTS */
 .particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:hidden}
-.particle{position:absolute;border-radius:50%;opacity:0.6;pointer-events:none}
+.particle{position:absolute;border-radius:50%;opacity:0.6}
 .ball{background:radial-gradient(circle at 30% 30%,#00e5ff,#0066aa);box-shadow:0 0 20px rgba(0,229,255,0.5)}
 .star{background:#fff;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);box-shadow:0 0 10px #fff}
 .planet{border-radius:50%;background:radial-gradient(circle at 30% 30%,#7000ff,#1a0033);box-shadow:0 0 30px rgba(112,0,255,0.4),inset -10px -10px 20px rgba(0,0,0,0.5)}
@@ -32,45 +32,51 @@ body{background:#05080f;color:#e6f1ff;font-family:Inter,Arial,sans-serif;overflo
 .lang-switch{display:flex;gap:8px}
 .lang-switch button{background:transparent;border:1px solid #223;color:#5a6a85;padding:6px 10px;border-radius:4px;cursor:pointer;font-size:10px;transition:0.2s}
 .lang-switch button.active,.lang-switch button:hover{border-color:#00e5ff;color:#00e5ff;box-shadow:0 0 10px rgba(0,229,255,0.3)}
-
-.hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;padding:40px 0 60px;position:relative;z-index:5}
+.hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;padding:40px 0 60px}
 @media(max-width:768px){.hero{grid-template-columns:1fr;padding:20px 0 30px}}
-
-.h1{font-size:42px;line-height:1.05;font-weight:900;letter-spacing:-1px}
+.h1{font-size:42px;line-height:0.95;font-weight:900;letter-spacing:-1px}
 .h1 span{color:#00e5ff;text-shadow:0 0 20px rgba(0,229,255,0.5)}
 .sub{margin-top:16px;color:#8a9bb5;font-size:13px;line-height:1.5;max-width:380px}
 .price-badge{display:inline-block;margin-top:14px;background:linear-gradient(90deg,#00e5ff,#00ffaa);color:#000;padding:8px 16px;border-radius:20px;font-weight:900;font-size:12px;letter-spacing:0.5px;box-shadow:0 0 20px rgba(0,229,255,0.4)}
-.btns{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:20}
+.btns{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
 .btn{background:#00e5ff;color:#000;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:900;font-size:12px;letter-spacing:0.5px;transition:0.2s;display:inline-block}
 .btn:hover{box-shadow:0 0 25px rgba(0,229,255,0.6);transform:translateY(-2px)}
-.btn2{border:1px solid #223;background:transparent;color:#8a9bb5;padding:12px 20px;border-radius:6px;text-decoration:none;font-size:11px;transition:0.2s}
-.btn2:hover{border-color:#00e5ff;color:#fff}
-
+.btn2{border:1px solid #223;background:transparent;color:#8aa;padding:12px 20px;border-radius:6px;text-decoration:none;font-size:11px}
 .book-wrap{display:flex;flex-direction:column;align-items:center;perspective:1200px}
 .book-card{width:300px;height:420px;position:relative;cursor:pointer;transform-style:preserve-3d}
 .book-inner{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.8s cubic-bezier(0.175,0.885,0.32,1.275)}
+.book-card.flipped .book-inner{transform:rotateY(25deg) rotateX(5deg) scale(1.05)}
+.book-card.flipped2 .book-inner{transform:rotateY(-25deg) rotateX(-5deg) scale(1.05)}
 .book-front{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:16px;overflow:hidden;border:1px solid #1a3a5a;box-shadow:0 0 60px rgba(0,229,255,0.25),0 20px 40px rgba(0,0,0,0.8)}
 .book-front img{width:100%;height:100%;object-fit:cover;display:block}
 .shine{position:absolute;top:0;left:-150%;width:60%;height:100%;background:linear-gradient(105deg,transparent 0%,rgba(0,229,255,0.1) 20%,rgba(255,255,255,0.9) 50%,rgba(0,229,255,0.4) 60%,transparent 100%);transform:skewX(-20deg);pointer-events:none;transition:left 0.6s ease}
 .book-card:hover .shine{left:150%;transition:left 0.8s ease}
 .glow{position:absolute;inset:-2px;background:linear-gradient(45deg,#00e5ff,#7000ff,#00ffaa);border-radius:16px;z-index:-1;opacity:0;transition:0.4s;filter:blur(20px)}
-.book-card:hover .glow{opacity:0.7}
+.book-card:hover .glow,.book-card.flipped .glow{opacity:0.7}
 .hint{margin-top:16px;text-align:center;font-size:9px;color:#3a4a5a;letter-spacing:1px}
-
-.fases{margin-top:60px;position:relative;z-index:5}
-.fases h2{font-size:18px;line-height:1.1;margin-bottom:20px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1a2a3a;border:1px solid #1a2a3a}
+.fases{margin-top:40px}
+.fases h2{font-size:18px;line-height:1.1}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1a2a3a;margin-top:20px;border:1px solid #1a2a3a}
 @media(max-width:768px){.grid4{grid-template-columns:1fr 1fr}}
 .grid4 div{background:#0a141f;padding:16px;transition:0.3s}
-.grid4 div:hover{background:#0f1e2f}
+.grid4 div:hover{background:#0f1e2f;border-color:#00e5ff}
 .grid4 b{font-size:10px;display:block;margin-bottom:6px}
-.grid4 p{font-size:9px;color:#5a6a7a;line-height:1.4}
-.construction-notice{background:rgba(255,204,0,0.05);border:1px solid rgba(255,204,0,0.3);border-radius:8px;padding:12px;margin:20px 0;text-align:center;color:#ffcc00;font-size:11px;line-height:1.4}
+.grid4 p{font-size:9px;color:#5a6a7a}
+.section2{margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:768px){.section2{grid-template-columns:1fr}}
+.checkout-box{background:#0a141f;border:1px solid #1e3a4a;border-radius:8px;padding:20px;position:relative;overflow:hidden}
+.checkout-box::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(0,229,255,0.05) 0%,transparent 50%);animation:rotate 10s linear infinite}
+@keyframes rotate{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.price-box{margin-top:60px;text-align:center;padding:40px 0;border-top:1px solid #12202f;position:relative}
+.price-box h2{color:#00e5ff;font-size:28px}
+img{max-width:100%;height:auto}
+.construction-notice{background:rgba(255,204,0,0.1);border:1px solid #ffcc00;border-radius:8px;padding:12px;margin:20px 0;text-align:center;color:#ffcc00;font-size:11px}
 
-/* MARQUEE FOOTER */
-.marquee{width:100%;overflow:hidden;background:#08121d;border-top:1px solid #12202f;border-bottom:1px solid #12202f;padding:10px 0;white-space:nowrap;position:relative;z-index:5;margin-top:60px}
-.marquee-track{display:inline-block;font-size:10px;letter-spacing:3px;color:#00e5ff;font-weight:900;animation:marqueeScroll 25s linear infinite}
+/* MARQUEE FOOTER - nome circulando */
+.marquee{width:100%;overflow:hidden;background:#08121d;border-top:1px solid #12202f;border-bottom:1px solid #12202f;padding:10px 0;white-space:nowrap;position:relative;z-index:5}
+.marquee-track{display:inline-block;animation:marqueeScroll 25s linear infinite;font-size:10px;letter-spacing:3px;color:#00e5ff;font-weight:900}
 @keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
 </style>
 </head>
 <body>
@@ -81,79 +87,81 @@ body{background:#05080f;color:#e6f1ff;font-family:Inter,Arial,sans-serif;overflo
 <div class="construction-banner" id="constructionBanner">🚧 SITE EM FASE DE CONSTRUÇÃO • PREÇO ESPECIAL $1 DÓLAR PARA O MUNDO • WORLDWIDE $1 DOLLAR • EM CONSTRUÇÃO 🚧</div>
 
 <div class="container">
-    <div class="header">
-        <span>COGNORDES • SECURITY • 2026 • <span id="headerStatus">EM CONSTRUÇÃO</span></span>
-        <div class="lang-switch">
-            <button onclick="setLang('pt')" class="active" id="btn-pt">PT</button>
-            <button onclick="setLang('en')" id="btn-en">EN</button>
-            <button onclick="setLang('es')" id="btn-es">ES</button>
-            <button onclick="setLang('zh')" id="btn-zh">ZH</button>
-        </div>
-    </div>
-
-    <div class="construction-notice" id="noticeBox">⚠️ Este site está em fase de construção. Você está garantindo acesso antecipado por apenas $1 dólar. Preço promocional de lançamento mundial!</div>
-
-    <div class="hero">
-        <div>
-            <div class="h1" id="title1">A NOVA MOEDA<br>É O<br><span>CONHECIMENTO</span></div>
-            <p class="sub" id="subtitle">Um manifesto para quem entende que Data é poder. Primeira obra da coleção mundial $1 dólar. Datacoin Inside.</p>
-            <div class="price-badge" id="priceBadge">$1 DÓLAR PARA O MUNDO • WORLDWIDE</div>
-            <div class="btns">
-                <!-- Insira aqui o link de pagamento definitivo do Stripe -->
-                <a href="https://stripe.com_" class="btn" id="btnBuy">ADQUIRIR POR $1 DÓLAR →</a>
-                <a href="#fases" class="btn2" id="btnLearn">VER MANIFESTO</a>
-            </div>
-        </div>
-
-        <div class="book-wrap">
-            <div class="book-card" id="bookCard" onmousemove="rotateBook(event)" onmouseleave="resetBook()">
-                <div class="glow"></div>
-                <div class="book-inner">
-                    <div class="book-front">
-                        <img src="./capa-07.07.44.jpg" alt="Capa Cognordes" onerror="this.src='./capa-07.07.45.jpg'">
-                        <div class="shine"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="hint" id="txtHint">Passe o mouse para interagir</div>
-        </div>
-    </div>
-
-    <div class="fases" id="fases">
-        <h2 id="titleFases">Cronograma de Lançamento</h2>
-        <div class="grid4">
-            <div>
-                <b style="color:#ffcc00">FASE 1: CONSTRUÇÃO</b>
-                <p id="f1">Acesso antecipado liberado mundialmente pelo valor simbólico de $1 dólar.</p>
-            </div>
-            <div>
-                <b>FASE 2: REVELAÇÃO</b>
-                <p id="f2">Abertura dos primeiros capítulos e integrações da arquitetura Datacoin.</p>
-            </div>
-            <div>
-                <b>FASE 3: EXPANSÃO</b>
-                <p id="f3">Atualização da plataforma e encerramento do lote promocional.</p>
-            </div>
-            <div>
-                <b>FASE 4: COMUNIDADE</b>
-                <p id="f4">Acesso completo ao ecossistema global e governança activa.</p>
-            </div>
-        </div>
-    </div>
+<div class="header">
+<span>COGNORDES • SECURITY • 2026 • <span id="headerStatus">EM CONSTRUÇÃO</span></span>
+<div class="lang-switch">
+<button onclick="setLang('pt')" class="active" id="btn-pt">PT</button>
+<button onclick="setLang('en')" id="btn-en">EN</button>
+<button onclick="setLang('es')" id="btn-es">ES</button>
+<button onclick="setLang('zh')" id="btn-zh">ZH</button>
+</div>
 </div>
 
+<div class="construction-notice" id="noticeBox">⚠️ Este site está em fase de construção. Você está garantindo acesso antecipado por apenas $1 dólar. Preço promocional de lançamento mundial!</div>
+
+<div class="hero">
+<div>
+<div class="h1" id="title1">A NOVA MOEDA<br>É O<br><span>CONHECIMENTO</span></div>
+<p class="sub" id="subtitle">Um manifesto para quem entende que Data é poder. Primeira obra da coleção mundial $1 dólar. Datacoin Inside.</p>
+<div class="price-badge" id="priceBadge">$1 DÓLAR PARA O MUNDO • WORLDWIDE</div>
+<div class="btns">
+<a href="https://stripe.com_" class="btn" id="btnBuy">ADQUIRIR POR $1 DÓLAR →</a>
+</div>
+</div> 
+
+<div class="book-wrap">
+<div class="book-card" id="bookCard">
+<div class="glow"></div>
+<div class="book-inner">
+<div class="book-front">
+<img src="capa-07.07.44.jpg" alt="Capa Cognordes" onerror="this.src='capa-07.07.45.jpg'">
+<div class="shine"></div>
+</div>
+</div>
+</div>
+<div class="hint" id="txtHint">Passe o mouse para interagir</div>
+</div>
+</div> 
+
+<div class="fases" id="fases">
+<h2 id="titleFases">Cronograma de Lançamento</h2>
+<div class="grid4">
+<div>
+<b style="color:#ffcc00">FASE 1: CONSTRUÇÃO</b>
+<p id="f1">Acesso antecipado liberado mundialmente pelo valor simbólico de $1 dólar.</p>
+</div>
+<div>
+<b>FASE 2: REVELAÇÃO</b>
+<p id="f2">Abertura dos primeiros capítulos e integrações da arquitetura Datacoin.</p>
+</div>
+<div>
+<b>FASE 3: EXPANSÃO</b>
+<p id="f3">Atualização da plataforma e encerramento do lote promocional.</p>
+</div>
+<div>
+<b>FASE 4: COMUNIDADE</b>
+<p id="f4">Acesso completo ao ecossistema global e governança activa.</p>
+</div>
+</div>
+</div>
+</div> 
+
 <div class="marquee">
-    <div class="marquee-track" id="marquee-track">
-        COGNORDES • DATA IS POWER • $1 DOLLAR WORLDWIDE • 2026 GLOBAL LAUNCH • COGNORDES • DATA IS POWER • $1 DOLLAR WORLDWIDE • 2026 GLOBAL LAUNCH •
-    </div>
+<div class="marquee-track">
+COGNORDES • DATA IS POWER • $1 DOLLAR WORLDWIDE • 2026 GLOBAL LAUNCH • COGNORDES • DATA IS POWER • $1 DOLLAR WORLDWIDE • 2026 GLOBAL LAUNCH •
+</div>
 </div>
 
 <script>
-function createParticles() {
-    const container = document.getElementById('particles');
-    const types = ['ball', 'star', 'planet'];
-    const floatings = ['floating1', 'floating2', 'floating3'];
+// GERADOR DAS SUAS PARTÍCULAS E PLANETAS ORIGINAIS
+const container = document.getElementById('particles');
+const types = ['ball', 'star', 'planet'];
+const floatings = ['floating1', 'floating2', 'floating3'];
+
+for (let i = 0; i < 15; i++) {
+    const particle = document.createElement('div');
+    const type = types[Math.floor(Math.random() * types.length)];
+    const float = floatings[Math.floor(Math.random() * floatings.length)];
     
-    for (let i = 0; i < 15; i++) {
-        const particle = document.createElement('div');
-        const type = types[Math.floor(Math.random() * types.length)];
+    particle.className = `particle ${type} ${float}`;
+    
