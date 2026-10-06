@@ -72,7 +72,7 @@ body{background:#05080f;color:#e6f1ff;font-family:Inter,Arial,sans-serif;overflo
 img{max-width:100%;height:auto}
 .construction-notice{background:rgba(255,204,0,0.1);border:1px solid #ffcc00;border-radius:8px;padding:12px;margin:20px 0;text-align:center;color:#ffcc00;font-size:11px}
 
-/* MARQUEE FOOTER - nome circulando */
+/* MARQUEE FOOTER */
 .marquee{width:100%;overflow:hidden;background:#08121d;border-top:1px solid #12202f;border-bottom:1px solid #12202f;padding:10px 0;white-space:nowrap;position:relative;z-index:5}
 .marquee-track{display:inline-block;animation:marqueeScroll 25s linear infinite;font-size:10px;letter-spacing:3px;color:#00e5ff;font-weight:900}
 @keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
@@ -147,13 +147,12 @@ img{max-width:100%;height:auto}
 </div> 
 
 <div class="marquee">
-<div class="marquee-track">
+<div class="marquee-track" id="marquee-track">
 COGNORDES • DATA IS POWER • $1 DOLLAR WORLDWIDE • 2026 GLOBAL LAUNCH • COGNORDES • DATA IS POWER • $1 DOLLAR WORLDWIDE • 2026 GLOBAL LAUNCH •
 </div>
 </div>
 
 <script>
-// GERADOR DAS SUAS PARTÍCULAS E PLANETAS ORIGINAIS
 const container = document.getElementById('particles');
 const types = ['ball', 'star', 'planet'];
 const floatings = ['floating1', 'floating2', 'floating3'];
@@ -165,3 +164,4 @@ for (let i = 0; i < 15; i++) {
     
     particle.className = `particle ${type} ${float}`;
     
+    let size = Math.random() * 20 + 8;
